@@ -12,8 +12,16 @@ namespace App;
 class Db
 {
 
-    function __construct()
+    protected $dbh;
+
+    public function __construct()
     {
-        echo 'Hello DB!';
+        $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=php7loc', 'root', 123);
+    }
+
+    public function execute($sql)
+    {
+        $stm = $this->dbh->prepare($sql);
+        return $stm->execute();
     }
 }

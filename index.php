@@ -9,3 +9,4 @@
 require __DIR__ . '/autoload.php';
 
 $db = new \App\Db();
+$db->execute('CREATE TABLE foo (id SERIAL)');
