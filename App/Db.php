@@ -21,10 +21,10 @@ class Db
         $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=php7loc', 'root', 123);
     }
 
-    public function execute($sql)
+    public function execute($sql, $params = [])
     {
         $stm = $this->dbh->prepare($sql);
-        return $stm->execute();
+        return $stm->execute($params);
     }
 
     public function query($sql, $class)
