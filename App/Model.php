@@ -15,13 +15,13 @@ abstract class Model
 
     public static function findAll()
     {
-        $db = new Db();
+        $db = \App\Db::instance();
         return $db->query('SELECT * FROM ' . static::TABLE, static::class);
     }
 
     public static function findById(int $id)
     {
-        $db = new Db();
+        $db = \App\Db::instance();
         $where = $db->prepere(' id =' . $id);
         return $db->query('SELECT * FROM ' . static::TABLE . $where, static::class);
     }
