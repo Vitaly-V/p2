@@ -8,7 +8,4 @@
 
 require __DIR__ . '/autoload.php';
 
-$user = \App\Models\User::findById(3);
-$user->name = 'Vlalik';
-$user->email = 'valik@seotoaster.com';
-$user->update();
+include __DIR__ . '/App/templates/index.php';
