@@ -20,7 +20,14 @@
     <![endif]-->
 </head>
 <body>
-<h1>Hello, world!</h1>
+<h1>Users</h1>
+
+<?php foreach ($users as $user) : ?>
+    <div class="panel panel-default">
+        <div class="panel-heading"><?= $user->name; ?></div>
+        <div class="panel-body"><?= $user->email; ?></div>
+    </div>
+<?php endforeach; ?>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
