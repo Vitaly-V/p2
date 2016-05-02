@@ -25,12 +25,12 @@ class Db
         return $stm->execute();
     }
 
-    public function query($sql)
+    public function query($sql, $class)
     {
         $stm = $this->dbh->prepare($sql);
         $res = $stm->execute();
         if (false !== $res) {
-            return $stm->fetchAll();
+            return $stm->fetchAll(\PDO::FETCH_CLASS, $class);
         }
         return [];
     }
