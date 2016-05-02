@@ -8,7 +8,7 @@
 
 require __DIR__ . '/autoload.php';
 
-$user = new \App\Models\User();
-$user->name = 'Andrei';
-$user->email = 'andrei@seosamba.com';
-$user->insert();
+$user = \App\Models\User::findById(3);
+$user->name = 'Vlalik';
+$user->email = 'valik@seotoaster.com';
+$user->update();
