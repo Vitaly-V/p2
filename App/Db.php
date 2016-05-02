@@ -24,4 +24,14 @@ class Db
         $stm = $this->dbh->prepare($sql);
         return $stm->execute();
     }
+
+    public function query($sql)
+    {
+        $stm = $this->dbh->prepare($sql);
+        $res = $stm->execute();
+        if (false !== $res) {
+            return $stm->fetchAll();
+        }
+        return [];
+    }
 }
