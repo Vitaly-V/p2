@@ -17,6 +17,11 @@ class User extends Model implements HasEmail
     public $email;
     public $name;
 
+    /**
+     * Method that returns email address.
+     * @return string Email address
+     * @deprecated
+     */
     public function getEmail()
     {
         return $this->getEmail();
