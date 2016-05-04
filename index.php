@@ -9,7 +9,6 @@
 require __DIR__ . '/autoload.php';
 
 $user = new \App\Models\User();
-$user->
 
 $view = new \App\View();
 $view->users = \App\Models\User::findAll();
