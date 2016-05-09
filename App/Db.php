@@ -18,7 +18,7 @@ class Db
 
     protected function __construct()
     {
-        $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=php7loc', 'root', 123);
+        $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=php7loc;charset=utf8', 'root', 123);
     }
 
     public function execute($sql, $params = [])

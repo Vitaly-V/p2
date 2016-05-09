@@ -8,9 +8,7 @@
 
 require __DIR__ . '/autoload.php';
 
-$user = new \App\Models\User();
-
 $view = new \App\View();
-$view->title = 'Users';
-$view->users = \App\Models\User::findAll();
+$view->title = 'News';
+$view->news = \App\Models\News::findAll();
 $view->display(__DIR__ . '/App/templates/index.php');

@@ -14,13 +14,15 @@ class User extends Model implements HasEmail
 {
     const TABLE = 'users';
 
+    public $id;
     public $email;
     public $name;
+    public $created;
+    public $updated;
 
     /**
      * Method that returns email address.
      * @return string Email address
-     * @deprecated
      */
     public function getEmail()
     {
