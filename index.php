@@ -10,4 +10,6 @@ require __DIR__ . '/autoload.php';
 
 $controller = new \App\Controllers\News();
 
-$controller->action('Index');
+$action = !empty($_GET['action']) ? ucfirst($_GET['action']) : 'Index';
+
+$controller->action($action);
