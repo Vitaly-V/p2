@@ -20,7 +20,12 @@
     <![endif]-->
 </head>
 <body>
-<h1><?= $article->title; ?></h1>
+
+<?php foreach ($errors as $error) : ?>
+    <div class="allert allert-danger"><?= $error->getMessage(); ?></div>
+<?php endforeach; ?>
+
+<h1>Create a news</h1>
 <div class="panel panel-default">
     <div class="panel-body"><?= $article->lead; ?></div>
     <?php if (!empty($article->author)) : ?>

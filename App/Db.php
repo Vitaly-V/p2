@@ -18,7 +18,11 @@ class Db
 
     protected function __construct()
     {
-        $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=php7loc;charset=utf8', 'root', 123);
+        try {
+            $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=php7loc;charset=utf8', 'root', 123);
+        } catch (\PDOException $e) {
+            throw new \App\Exceptions\Db($e);
+        }
     }
 
     public function execute($sql, $params = [])
